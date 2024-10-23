@@ -15,7 +15,7 @@ export default function Home() {
     script.src = "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js";
     script.onload = () => {
       var options = {
-        strings: ["Ganesh Agrahari", "ML Expert ","a Data Scientist ", "a Web Developer", "an AI Enthusiast"],
+        strings: ["Ganesh Agrahari", "Python Expert ","ML Expert ", "an AI Enthusiast","a Data Scientist ", "a Web Developer" ],
         typeSpeed: 90,
         backSpeed: 90,
         loop: true
