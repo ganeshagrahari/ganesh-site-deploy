@@ -213,7 +213,7 @@ export default function Home() {
 					</figure>
 					<h3>Face Recognition Attendance System</h3>
 					<div>2024-july</div>
-					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology.</p>
+					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology, for GUI i used ttk enter module and for recognition I used haar cascade face detection !</p>
 				</article>
 				<article>
 					<figure>
@@ -226,7 +226,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Face regognizer!</h3>
 					<div>Part of FRAS</div>
-					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm!</p>
+					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm, and it divide one image into 100 pixel and assign array for each pixel !</p>
 				</article>
 				<article>
 					<figure>
@@ -239,7 +239,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Attendance Management System!</h3>
 					<div>Part of Fras</div>
-					<p>This module detects and recognizes faces using OpenCV, marking attendance and creating a record for it in an Excel sheet. It ensures accurate, real-time tracking with simple functionality.</p>
+					<p>This module detects and recognizes faces using OpenCV, marking attendance and creating a record for it in an Excel sheet. It ensures accurate, real-time tracking with simple functionality!</p>
 				</article>
 
 			</div>
