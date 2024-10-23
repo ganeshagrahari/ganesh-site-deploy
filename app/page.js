@@ -63,7 +63,7 @@ export default function Home() {
         </nav>
     </header>
     <main>
-        <section id="home"className="hero container">
+        <section id="home" className="hero container">
             <div className="hero-blue">
                 <div>
                     <h1><small>Hi I'm</small>
