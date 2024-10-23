@@ -226,7 +226,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Face regognizer!</h3>
 					<div>Part of FRAS</div>
-					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm, and it divide one image into 100 pixel and assign array for each pixel !</p>
+					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm, and it divide one image into 100 pixel and assign array for each pixel than perform Deep learning on it!</p>
 				</article>
 				<article>
 					<figure>
