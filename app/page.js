@@ -239,7 +239,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Attendance Management System!</h3>
 					<div>Part of Fras</div>
-					<p>This module automates attendance by detecting and recognizing faces in real time using OpenCV and deep learning. Once a face is recognized, the system automatically marks attendance, recording it with a timestamp in a connected SQL database. The interface, built with ttkinter, allows for easy user enrollment and tracking. This eliminates the need for manual attendance, ensuring accuracy and efficiency.</p>
+					<p>This module detects and recognizes faces using OpenCV, marking attendance and creating a record for it in an Excel sheet. It ensures accurate, real-time tracking with simple functionality.</p>
 				</article>
 
 			</div>
