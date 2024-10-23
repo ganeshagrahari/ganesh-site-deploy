@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,92 +10,81 @@ export default function Home() {
     setMenuOpen(!menuOpen);
   };
 
-  // Define your bot responses
-  const responses = {
-    "What skills are you best at?": "I'm skilled in machine learning, deep learning (CNN), Python, web development (HTML, CSS, JavaScript, Node.js), and Java (with DSA).",
-    "Tell me about your projects.": "I've developed a Face Recognition Attendance System and a Movie Recommendation System.",
-    "What are you studying?": "I'm pursuing a BCA course in Data Science and Artificial Intelligence at BBD University, Lucknow.",
-    "Contact details?": "You can reach me at ganeshagrahari108@gmail.com.",
-    // Add more questions and answers as needed
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js";
+    script.onload = () => {
+      var options = {
+        strings: ["Ganesh Agrahari", "ML Expert ","a Data Scientist ", "a Web Developer", "an AI Enthusiast"],
+        typeSpeed: 90,
+        backSpeed: 90,
+        loop: true
+      };
 
-  const handleSendMessage = () => {
-    if (userMessage.trim()) {
-      const botReply = responses[userMessage] || "I'm sorry, I don't understand that.";
-      setChatLog([...chatLog, { user: userMessage, bot: botReply }]);
-      setUserMessage(""); // Clear the input field
-    }
-  };
+      new Typed(".auto-type", options);
+    };
+    document.body.appendChild(script);
+  }, []);
 
-  // Handle input changes
-  const handleInputChange = (e) => {
-    setUserMessage(e.target.value);
-  };
+  
 
-  // Render chat messages
-  const renderChatLog = () => {
-    return chatLog.map((entry, index) => (
-      <li key={index}>
-        <span className="avatar user">User</span>
-        <div className="message">{entry.user}</div>
-        <span className="avatar bot">AI</span>
-        <div className="message">{entry.bot}</div>
-      </li>
-    ));
-  };
+  
   
 
 
   return (
     <><header>
-		<a href="#" class="logo-holder">
-			<div className="logo">L</div>
+		<a href="#" className="logo-holder">
+			<div className="logo">G</div>
 			<div className="logo-text">Portfolio Website</div>
 		</a>
+		<link rel="icon" type="image/jpg" href="./imgs/favicon.jpg"></link>
 		<nav>
 			<ul id="menu" className={menuOpen ? "active" : ""}>
 				<li>
-					<a href="#">Home</a>
+					<a href="#home">Home</a>
 				</li>
 				<li>
 					<a href="#skills">Skills</a>
 				</li>
 				<li>
-					<a href="#projects">Projects</a>
-				</li>
-				<li>
-					<a href="ganeshagrahari108@gmail.com" class="button">Contact Me</a>
-				</li>
-			</ul>
-			<a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
-				<svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-					width="24" height="24" fill="none" viewBox="0 0 24 24">
-					<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
-				</svg>
-			</a>
-		</nav>
-	</header>
-	<main>
-		<section className="hero container">
-			<div className="hero-blue">
-				<div>
-					<h1><small>Hi I'm</small>
-						Ganesh Agrahari
-					</h1>
-					<p>
-						Pursuing a BCA course in Data Science and Artificial Intelligence at BBD University, Lucknow.
-						Skilled in machine learning, deep learning, Python, web development, and Java, with hands-on
-						experience in projects like a Face Recognition Attendance System. Eager to apply technical
-						expertise to real-world challenges, driven by a passion for innovation and technology.
+				<a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="mailto:ganeshagrahari108@gmail.com" className="button">Contact Me</a>
+                </li>
+            </ul>
+            <a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
+                <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
+                </svg>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section id="home"className="hero container">
+            <div className="hero-blue">
+                <div>
+                    <h1><small>Hi I'm</small>
+                        <span className="auto-type"></span>
+                    </h1>
+                    
+                    <p>
+                        Pursuing a BCA course in Data Science and Artificial Intelligence at BBD University, Lucknow.
+                        Skilled in machine learning, deep learning, Python, web development, and Java, with hands-on
+                        experience in projects like a Face Recognition Attendance System. Eager to apply technical
+                        expertise to real-world challenges, driven by a passion for innovation and technology.
 
 
 
 
 
 
-						<span>I'm interested in AI topics which is why I also add things like ChatGPT into my projects
-							these days.</span>
-					</p>
+                        <span>I'm interested in AI topics which is why I also add things like ChatGPT into my projects
+                            these days.</span>
+                    </p>
+						
 					<div className="call-to-action">
 						<a href="./Ganesh Agrahari Resume.pdf" className="button black">
 							View Resume
@@ -110,6 +99,12 @@ export default function Home() {
 						</a>
 						<a href="https://www.linkedin.com/in/ganesh-agrahari-727746263/" target="_blank">
 							<img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+						</a>
+						<a href="https://www.instagram.com/quantum_viag/" target="_blank">
+							<img src="./imgs/instagram.png" alt="instagram" width="60" />
+						</a>
+						<a href="mailto:ganeshagrahari108@gmail.com" target="_blank">
+							<img src="./imgs/email.png" alt="email" width="43" />
 						</a>
 					</div>
 				</div>
@@ -173,7 +168,7 @@ export default function Home() {
 						<li>DeepLearning(CNN)</li>
 						<li>DSA</li>
 					</ul>
-					<h3>Basic</h3>
+					<h3>Learning</h3>
 					<ul>
 						<li>Node.js</li>
 						<li>Java</li>
@@ -184,66 +179,66 @@ export default function Home() {
 					</ul>
 				</div>
 				<div className="right-column">
-					<h3>A bit about me</h3>
+					<h3>Education & My project Experties</h3>
 					<p>
 
-						I am Ganesh Agrahari, a BCA student in Data Science and AI at BBD University, Lucknow,
-						graduating in September 2026. My expertise includes machine learning, deep learning (CNN),
-						Python, web development (HTML, CSS, JavaScript, Node.js), and Java (with DSA). I’ve developed
-						projects like a Face Recognition Attendance System and a Movie Recommendation System and hold
-						certifications in Data Science and Machine Learning !!
+					Ganesh Agrahari is pursuing a BCA in Data Science and Artificial Intelligence at BBD University,
+					 Lucknow, expecting to graduate in September 2026. They have strong skills in machine learning, deep learning (CNN),
+					  Python, Java (including DSA), web development (HTML, CSS, JavaScript, Node.js), and data visualization using Power BI...
 					</p>
 					<p>
-						I am eager to apply my skills through internship opportunities. I am passionate about
-						international affairs and networking, and contribute to my university’s technical team in the
-						cultural group 'Aaina'.
+					Ganesh's projects include a Face Recognition Attendance System using Python, OpenCV, and deep learning, as well as a Movie Recommendation System leveraging Python libraries like Pandas and Scikit-learn.
+					 They have also built a portfolio website showcasing their technical expertise and projects...
 					</p>
-				</div>
+					<p>You can check My project on github repositories mentioned below :</p>
+					<div className="social-links"><a href="https://github.com/ganeshagrahari?tab=repositories" target="_blank" >
+					<img src="./imgs/githubrepo.png" alt="GitHub" width="60" /></a></div>
+					 </div> 
 			</div>
 		</section>
-		<section className="work-experience container">
+		<section id="recent project-ex" className="work-experience container">
 			<h2>
 				<small>Recent</small>
-				Work Experience
+				Project Experience(FRAS)
 			</h2>
 			<div className="jobs">
 				<article>
 					<figure>
 						<div>
-							<img src="./imgs/workplace-1.jpg" alt="Workplace 1 - YouTube Creator" width="100%" />
+							<img src="./imgs/workplace-1.png" alt="Face Recognition Attendance System" width="100%" />
 							<figcaption>
-								Workplace - 1 YouTube Creator
+							Face Recognition Attendance System
 							</figcaption>
 						</div>
 					</figure>
-					<h3>YouTube Content Creator</h3>
-					<div>2020-current</div>
-					<p>Content creation online teaching people about how to code using HTML, CSS, JS.</p>
+					<h3>Face Recognition Attendance System</h3>
+					<div>2024-july</div>
+					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology.</p>
 				</article>
 				<article>
 					<figure>
 						<div>
-							<img src="./imgs/workplace-2.jpg" alt="Workplace 2 - Moshi Moshi Marketing" width="100%" />
+							<img src="./imgs/workplace-2.png" alt="Face recognizer" width="100%" />
 							<figcaption>
-								Workplace - Moshi Moshi Marketing
+						     Face Recognizer
 							</figcaption>
 						</div>
 					</figure>
-					<h3>Moshi Moshi Marketing</h3>
-					<div>20018-2020</div>
-					<p>Marketing agency building websites and programming them from the ground up. </p>
+					<h3>FRAS-Face regognizer!</h3>
+					<div>Part of FRAS</div>
+					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm!</p>
 				</article>
 				<article>
 					<figure>
 						<div>
-							<img src="./imgs/workplace-3.jpg" alt="Workplace 3 - Chamber of Commerce" width="100%" />
+							<img src="./imgs/workplace-3.png" alt="Attendance Management System" width="100%" />
 							<figcaption>
-								Workplace - Chamber of Commerce
+							Attendance Management System
 							</figcaption>
 						</div>
 					</figure>
-					<h3>Chamber of Commerce</h3>
-					<div>2013-2018</div>
+					<h3>FRAS-Attendance Management System!</h3>
+					<div>Part of Fras</div>
 					<p>A small to large business organisation that helps facilitate advice and support.</p>
 				</article>
 
@@ -257,74 +252,91 @@ export default function Home() {
 				Completed Projects
 			</h2>
 			<div className="bento-grid">
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-1.jpg" alt="BGCCI" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-4.png" alt="workplace-4" width="100%" />
 				</a>
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-2.jpg" alt="Churhview" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-1.png" alt="workplace-1" width="100%" />
 				</a>
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-3.jpg" alt="Harley" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-3.png" alt="workplace-3" width="100%" />
 				</a>
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-5.jpg" alt="Bunbury" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-2.png" alt="workplace-2" width="100%" />
 				</a>
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-6.jpg" alt="Running" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-5.png" alt="workplace-5" width="100%" />
 				</a>
-				<a href="#" className="bento-item">
-					<img src="./imgs/bento-7.jpg" alt="School" width="100%" />
+				<a href="https://github.com/ganeshagrahari" className="bento-item">
+					<img src="./imgs/workplace-6.jpg" alt="School" width="100%" />
 				</a>
 			</div>
 		</section>
-		<section className="chatbot container">
-      <h2>
-        <small>Talk to me</small>
-        Chatbot
-      </h2>
-      <div className="chatbot-blue">
-        <div className="chat-info">
-          <h3>Chatbot Description</h3>
-          <p>
-		  I developed a simple chatbot designed for basic interactions. While it effectively handles straightforward queries and responses, it is currently limited in its functionality. Users can engage in simple conversations, but the chatbot does not support complex tasks or advanced
-		   interactions at this stage. Future improvements are planned to enhance its capabilities and user experience.
-          </p>
-          <p>
-		  I am seeking internship opportunities to apply my skills in machine learning, Python, and web development. Currently pursuing a BCA in Data Science and AI, I'm eager to gain
-		   hands-on experience and contribute to a dynamic team while further developing my technical expertise. You can download my resume using the button below.
-          </p>
-          <a href="./Ganesh Agrahari Resume.pdf" className="button black">Download Resume</a>
+		<section id="contact" className="chatbot container">
+    <div id="contact">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <div className="contact-container">
+            <h1><i className="fa-solid fa-user"></i> Contact Me</h1>
+            <div className="row">
+                <div className="left-contact">
+                    <p><i className="fa-solid fa-envelope"></i> ganeshagrahari108@gmail.com</p>
+                    <p><i className="fa-solid fa-phone"></i> +91 904-423-2872</p>
+                    <p><i className="fa-solid fa-map-pin"></i> Lucknow</p>
+                    <div id="msg"></div>
+                </div>
+                <div className="right-contact">
+                    <form action="https://api.web3forms.com/submit" method="POST" name="submit-to-google-sheet">
+					<input type="hidden" name="access_key" value="a6b6c25d-bfdd-4695-b793-2dc861f5e5d8"/>
+                        <input type="text" name="Name" placeholder="Name" required />
+                        <input type="email" name="Email" placeholder="Email" required />
+                        <textarea name="Message" placeholder="Message" rows="5" required></textarea>
+                        <button type="submit" className="sub-btn">Submit <i className="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div className="chat-box">
-          <div className="scroll-area">
-            <ul id="chat-log">
-              {renderChatLog()}
-			  <li>
-								<span class="avatar bot">AI</span>
-								<div class="message">
-									Hi, I'm a friendly chatbot that lets you interactive with this portfolio and CV. How
-									can I help?
-								</div>
-							</li>            
-            </ul>
-          </div>
-          <div className="chat-message">
-            <input 
-              id="text" 
-              type="text" 
-              name="msg" 
-              placeholder="Hey Ganesh, what skills are you best at?" 
-              value={userMessage} 
-              onChange={handleInputChange}
-              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()} // Send message on Enter key
-            />
-            <button type="submit" id="send" className="button black" onClick={handleSendMessage}>
-              Send
-            </button>
-          </div>
+    </div>
+</section>
+<footer>
+        <div className="container">
+            <div className="copyright">
+                <h3>Ganesh's Portfolio</h3>
+                <p>Thanks for visiting my portfolio, Here I have shared with you my project experience and skills! </p>
+            </div>
+            <div className="quic-links">
+                <h3>Quic Links</h3>
+                <a href="#home"><i className="ri-send-plane-2-line"></i> Home</a>
+                <a href="#skills"><i className="ri-send-plane-2-line"></i> Skills</a>
+                <a href="#projects"><i className="ri-send-plane-2-line"></i> Projects</a>
+				<a href="#recent project-ex"><i className="ri-send-plane-2-line"></i> Project Experience</a> 
+				<a href="#contact"><i className="ri-send-plane-2-line"></i> Contact</a> 
+                
+                
+            </div>
+            <div className="contact-info">
+                <h3>Contact info</h3>
+                <p><i className="fa-solid fa-envelope"></i> ganeshagrahari108@gmail.com</p>
+                <p><i className="fa-solid fa-phone"></i> +91 904-423-2872</p>
+                <p><i className="fa-solid fa-map-pin"></i> Lucknow</p>
+                
+                <ul className="footer-social">
+                    <li><a href="https://github.com/ganeshagrahari" target="_blank"><i className="fa-brands fa-github-alt"></i></a></li>
+    
+                    <li><a href="https://www.instagram.com/quantum_viag/" target="_blank"><i className="fa-brands fa-instagram"></i></a></li>
+    
+                    <li><a href="https://www.linkedin.com/in/ganesh-agrahari-727746263/" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a></li>
+    
+                    
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
+        <div id="copyright-message">
+            <p>Copyright &copy; Ganesh, Made  By <span>Ganesh Agrahari</span></p>
+        </div>
+    </footer>
+		
+
+		
 	</main></>
       
   );
