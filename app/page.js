@@ -252,22 +252,22 @@ export default function Home() {
 				Completed Projects
 			</h2>
 			<div className="bento-grid">
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-4.png" alt="workplace-4" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-1.png" alt="workplace-1" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-3.png" alt="workplace-3" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-2.png" alt="workplace-2" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-5.png" alt="workplace-5" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-6.jpg" alt="School" width="100%" />
 				</a>
 			</div>
