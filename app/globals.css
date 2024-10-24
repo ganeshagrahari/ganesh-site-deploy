@@ -519,7 +519,8 @@ h3 {
    
    .contact-container h1 {
 	 text-align: center;
-	 margin-bottom:30px;
+	 margin-bottom:60px;
+	 padding-right: 30px;
    }
    
    .left-contact {
@@ -613,7 +614,7 @@ h3 {
 	.contact-container {
 		width: 100vw;
 		height: auto;
-		padding:0 20px;
+		padding:0 5px;
 	  }
 	
 	  .left-contact {
@@ -643,15 +644,15 @@ h3 {
 	  }
 	
 	  .right-contact form {
-		width: 90vw;
-		padding: 20px 15px;
+		width: 83vw;
+		padding: 8px 20px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		background-color: #fff;
 		border-radius: 10px;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 		box-shadow: 0 0 20px #0000001c;
 	  }
 	
@@ -810,6 +811,7 @@ footer .container {
 		padding: 25px 30px;
 		display: flex;
 		flex-direction: column;
+		width: 89vw;
 	  }
 	
 	  footer .container .copyright {

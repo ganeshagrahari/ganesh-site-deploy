@@ -36,7 +36,7 @@ export default function Home() {
     <><header>
 		<a href="#" className="logo-holder">
 			<div className="logo">G</div>
-			<div className="logo-text">Portfolio Website</div>
+			<div className="logo-text">Ganesh Agrahari</div>
 		</a>
 		<link rel="icon" type="image/jpg" href="./imgs/favicon.jpg"></link>
 		<nav>
@@ -199,7 +199,7 @@ export default function Home() {
 		<section id="recent project-ex" className="work-experience container">
 			<h2>
 				<small>Recent</small>
-				Project Experience(FRAS)
+				Project Experience
 			</h2>
 			<div className="jobs">
 				<article>
