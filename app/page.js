@@ -15,7 +15,7 @@ export default function Home() {
     script.src = "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js";
     script.onload = () => {
       var options = {
-        strings: ["Ganesh Agrahari", "ML Expert ","a Data Scientist ", "a Web Developer", "an AI Enthusiast"],
+        strings: ["Ganesh Agrahari", "Python Expert ","ML Expert ", "an AI Enthusiast","a Data Scientist ", "a Web Developer" ],
         typeSpeed: 90,
         backSpeed: 90,
         loop: true
@@ -63,7 +63,7 @@ export default function Home() {
         </nav>
     </header>
     <main>
-        <section id="home"className="hero container">
+        <section id="home" className="hero container">
             <div className="hero-blue">
                 <div>
                     <h1><small>Hi I'm</small>
@@ -213,7 +213,7 @@ export default function Home() {
 					</figure>
 					<h3>Face Recognition Attendance System</h3>
 					<div>2024-july</div>
-					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology.</p>
+					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology, for GUI i used ttk enter module and for recognition I used haar cascade face detection !</p>
 				</article>
 				<article>
 					<figure>
@@ -226,7 +226,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Face regognizer!</h3>
 					<div>Part of FRAS</div>
-					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm!</p>
+					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm, and it divide one image into 100 pixel and assign array for each pixel than perform Deep learning on it!</p>
 				</article>
 				<article>
 					<figure>
@@ -239,7 +239,7 @@ export default function Home() {
 					</figure>
 					<h3>FRAS-Attendance Management System!</h3>
 					<div>Part of Fras</div>
-					<p>A small to large business organisation that helps facilitate advice and support.</p>
+					<p>This module detects and recognizes faces using OpenCV, marking attendance and creating a record for it in an Excel sheet. It ensures accurate, real-time tracking with simple functionality!</p>
 				</article>
 
 			</div>
@@ -252,22 +252,22 @@ export default function Home() {
 				Completed Projects
 			</h2>
 			<div className="bento-grid">
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-4.png" alt="workplace-4" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-1.png" alt="workplace-1" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-3.png" alt="workplace-3" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-2.png" alt="workplace-2" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-5.png" alt="workplace-5" width="100%" />
 				</a>
-				<a href="https://github.com/ganeshagrahari" className="bento-item">
+				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-6.jpg" alt="School" width="100%" />
 				</a>
 			</div>
