@@ -304,7 +304,7 @@ export default function Home() {
                 <p>Thanks for visiting my portfolio, Here I have shared with you my project experience and skills! </p>
             </div>
             <div className="quic-links">
-                <h3>Quic Links</h3>
+                <h3>Quick Links</h3>
                 <a href="#home"><i className="ri-send-plane-2-line"></i> Home</a>
                 <a href="#skills"><i className="ri-send-plane-2-line"></i> Skills</a>
                 <a href="#projects"><i className="ri-send-plane-2-line"></i> Projects</a>
