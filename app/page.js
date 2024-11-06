@@ -212,34 +212,37 @@ export default function Home() {
 						</div>
 					</figure>
 					<h3>Face Recognition Attendance System</h3>
-					<div>2024-july</div>
+					<div>2024-July</div>
 					<p>FRAS is DeepLearning based  project which is used to mark attendance of students using face recognition technology, for GUI i used ttk enter module and for recognition I used haar cascade face detection !</p>
 				</article>
 				<article>
 					<figure>
 						<div>
-							<img src="./imgs/workplace-2.png" alt="Face recognizer" width="100%" />
+							<img src="./imgs/workplace-2_new.png" alt="Movie Recommendated System" width="100%" />
+
 							<figcaption>
-						     Face Recognizer
+						     Movie Recommendation System
 							</figcaption>
 						</div>
 					</figure>
-					<h3>FRAS-Face regognizer!</h3>
-					<div>Part of FRAS</div>
-					<p>It recognize the faces  of students and mark their attendance. For recognizing it uses lbph algorithm, and it divide one image into 100 pixel and assign array for each pixel than perform Deep learning on it!</p>
+					<h3>Movie Recommendation System</h3>
+
+					<div>2024-September</div>
+					<p>This Streamlit movie recommendation system suggests five movies based on a single input, showing posters for each. Built with Python libraries (sklearn, nltk), it uses a Kaggle dataset with predictions stored in pkl files.</p>
 				</article>
 				<article>
 					<figure>
 						<div>
-							<img src="./imgs/workplace-3.png" alt="Attendance Management System" width="100%" />
+							<img src="./imgs/workplace-3_new.png" alt="Reliance Sales Report" width="100%" />
 							<figcaption>
-							Attendance Management System
+							Reliance Sales Report
 							</figcaption>
 						</div>
 					</figure>
-					<h3>FRAS-Attendance Management System!</h3>
-					<div>Part of Fras</div>
-					<p>This module detects and recognizes faces using OpenCV, marking attendance and creating a record for it in an Excel sheet. It ensures accurate, real-time tracking with simple functionality!</p>
+					<h3>Reliance Sales Report</h3>
+
+					<div>2024-November</div>
+					<p>Reliance Sales Report is a Power BI project that visualizes sales data for Reliance Retail. It includes a sales report, sales by category, and sales by region, with filters for date, category, and region.</p>
 				</article>
 
 			</div>
@@ -262,7 +265,7 @@ export default function Home() {
 					<img src="./imgs/workplace-3.png" alt="workplace-3" width="100%" />
 				</a>
 				<a href="#" className="bento-item">
-					<img src="./imgs/workplace-2.png" alt="workplace-2" width="100%" />
+					<img src="./imgs/workplace-2_new.png" alt="workplace-2_new" width="100%" />
 				</a>
 				<a href="#" className="bento-item">
 					<img src="./imgs/workplace-5.png" alt="workplace-5" width="100%" />

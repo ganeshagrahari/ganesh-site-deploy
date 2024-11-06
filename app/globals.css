@@ -245,7 +245,8 @@ h1 {
   .hero-yellow img {
 	margin-top: -60px;
 	max-width: 420px;
-	margin-bottom: -10px;
+	margin-bottom: 20px;
+	margin-left: 30px;
   }
   
   
