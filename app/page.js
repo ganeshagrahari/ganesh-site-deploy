@@ -1,8 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false); // Chatbot state
   const [chatLog, setChatLog] = useState([]);
   const [userMessage, setUserMessage] = useState("");
 
@@ -10,15 +12,60 @@ export default function Home() {
     setMenuOpen(!menuOpen);
   };
 
+  const toggleChat = () => {
+    setChatOpen(!chatOpen);
+  };
+
+  const handleUserMessage = () => {
+    // Handle user input and chat functionality
+    if (userMessage.trim() !== "") {
+      setChatLog((prev) => [...prev, { type: "user", message: userMessage }]);
+      setUserMessage("");
+      // Add API call or response handling logic here
+    }
+  };
+  const sendMessage = async () => {
+    if (!userMessage.trim()) return;
+
+    try {
+        // Call backend API
+        const response = await fetch('http://localhost:5000/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userMessage }),
+        });
+
+        const data = await response.json();
+        if (data.botResponse) {
+            setChatLog([...chatLog, { type: 'bot', message: data.botResponse }]);
+        } else {
+            setChatLog([...chatLog, { type: 'bot', message: 'Sorry, something went wrong!' }]);
+        }
+    } catch (error) {
+        console.error("Error communicating with backend:", error);
+        setChatLog([...chatLog, { type: 'bot', message: 'Error connecting to chatbot service.' }]);
+    }
+};
+
+
   useEffect(() => {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js";
     script.onload = () => {
       var options = {
-        strings: ["Ganesh Agrahari", "Python Expert ","ML Expert ", "an AI Enthusiast","a Data Scientist ", "a Web Developer" ],
+        strings: [
+          "Ganesh Agrahari",
+          "Python Expert ",
+          "ML Expert ",
+          "an AI Enthusiast",
+          "a Data Scientist ",
+          "a Web Developer",
+        ],
         typeSpeed: 90,
         backSpeed: 90,
-        loop: true
+        loop: true,
       };
 
       new Typed(".auto-type", options);
@@ -337,10 +384,134 @@ export default function Home() {
             <p>Copyright &copy; Ganesh, Made  By <span>Ganesh Agrahari</span></p>
         </div>
     </footer>
+
+	<ChatbotButton onClick={toggleChat}>💬</ChatbotButton>
+        {chatOpen && (
+          <ChatbotModal>
+            <ChatbotHeader>
+              <h4>Ask me anything about Ganesh!</h4>
+              <CloseButton onClick={toggleChat}>✖</CloseButton>
+            </ChatbotHeader>
+            <ChatbotContent>
+              <ChatLog>
+                {chatLog.map((chat, idx) => (
+                  <ChatMessage key={idx} type={chat.type}>
+                    {chat.message}
+                  </ChatMessage>
+                ))}
+              </ChatLog>
+              <ChatInputContainer>
+                <ChatInput
+                  type="text"
+                  value={userMessage}
+                  onChange={(e) => setUserMessage(e.target.value)}
+                  placeholder="Type your message..."
+                />
+                <SendButton onClick={handleUserMessage}>Send</SendButton>
+              </ChatInputContainer>
+            </ChatbotContent>
+          </ChatbotModal>
+        )}
 		
 
 		
-	</main></>
+	</main>
+	</>
       
   );
 }
+// Styled Components
+const ChatbotButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const ChatbotModal = styled.div`
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+const ChatbotHeader = styled.div`
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
+const ChatbotContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+`;
+
+const ChatLog = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+`;
+
+const ChatMessage = styled.div`
+  background-color: ${(props) => (props.type === "user" ? "#007bff" : "#f1f1f1")};
+  color: ${(props) => (props.type === "user" ? "white" : "black")};
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  align-self: ${(props) => (props.type === "user" ? "flex-end" : "flex-start")};
+`;
+
+const ChatInputContainer = styled.div`
+  display: flex;
+  gap: 5px;
+`;
+
+const ChatInput = styled.input`
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
+
+const SendButton = styled.button`
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
