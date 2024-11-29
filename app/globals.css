@@ -25,6 +25,16 @@ body {
 	font-style: normal;
 	font-size: 20px;
 	padding-bottom:0;
+	margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+	/* Add this for mobile-specific adjustments */
+    @media (max-width: 768px) {
+    
+        width: 100%;
+        overflow-x: hidden;
+    
+}
 }
 
 a {
