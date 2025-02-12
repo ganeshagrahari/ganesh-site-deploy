@@ -236,6 +236,7 @@ h1 small {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	animation: fadeIn 1s ease-out;
 }
 
 .hero-blue span.auto-type {
@@ -271,18 +272,68 @@ h1 small {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+	transform: translateY(0);
+	transition: transform 0.5s ease-in-out;
+
+	&:hover {
+		transform: translateY(-10px);
+
+		img {
+			transform: scale(1.05) rotate(-2deg);
+		}
+	}
 }
 
 .hero-yellow img {
-	margin-top: -105px;
+	margin-top: -52px;
 	max-width: 470px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	margin-left: 30px;
-
+	transition: all 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+	animation: float 6s ease-in-out infinite;
 }
 
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 
+@keyframes float {
+	0% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20px) rotate(2deg);
+	}
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+}
 
+.hero-blue h1 {
+	animation: slideUp 1s ease-out 0.2s backwards;
+}
+
+.hero-blue p {
+	animation: slideUp 1s ease-out 0.4s backwards;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 
 .logos {
 	background-color: var(--base-100);
