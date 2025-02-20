@@ -19,10 +19,24 @@
 	--blue-100: #e2f8ff;
 	--blue-400: #61dafb;
 	--blue-800: #0a61ae;
+	--dark-base: #333;
+	--dark-base-100: #1a1a1a;
+	--dark-base-200: #2d2d2d;
+	--dark-base-300: #404040;
+	--dark-base-400: #444;
+	--dark-base-800: #111;
+	--dark-yellow: #ffda4b;
+	--dark-blue: #0a61ae;
+	--dark-text-primary: #e6e6e6;
+	--dark-text-secondary: #b3b3b3;
+	--dark-accent: #7c3aed;
+	--dark-accent-hover: #6d28d9;
+	--heading-font: 'Montserrat', sans-serif;
+	--body-font: 'Montserrat', sans-serif;
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: var(--body-font);
 	font-optical-sizing: auto;
 	font-style: normal;
 	font-size: 20px;
@@ -30,14 +44,73 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	line-height: 1.6;
+	font-weight: 400;
 
 	/* Add this for mobile-specific adjustments */
 	@media (max-width: 768px) {
-
 		width: 100%;
 		overflow-x: hidden;
-
+		padding: 5px;
+		font-size: 18px;
 	}
+}
+
+body.dark-mode {
+	background-color: var(--dark-base-100);
+	color: var(--dark-text-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode a {
+	color: var(--dark-accent);
+
+	&:hover {
+		color: var(--dark-accent-hover);
+	}
+}
+
+body.dark-mode header {
+	background-color: var(--dark-base-200);
+	border-bottom: 1px solid var(--dark-base-300);
+}
+
+body.dark-mode .button {
+	background-color: var(--dark-accent);
+	color: var(--dark-text-primary);
+}
+
+body.dark-mode .button:hover {
+	background-color: var(--dark-accent-hover);
+}
+
+body.dark-mode .hero-blue {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .hero-yellow {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .logos {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .skills .holder-blue {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .work-experience article {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .bento .bento-item {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode nav a:hover {
+	background-color: var(--dark-base-300);
 }
 
 a {
@@ -50,13 +123,21 @@ a {
 }
 
 header {
-	padding-top: 10px;
-	padding-bottom: 10px;
 	display: flex;
 	justify-content: space-between;
-	max-width: 1440px;
-	margin: auto;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	align-items: center;
+	padding: 10px;
+
+	@media (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: center;
+		padding: 5px;
+	}
 
 	.logo-holder {
 		display: flex;
@@ -86,72 +167,268 @@ header {
 	nav {
 		display: flex;
 		align-items: center;
-
-		ul {
-			display: flex;
-			list-style-type: none;
-			gap: 5px;
-
-			li {
-				display: inline-block;
-
-				a {
-					display: inline-block;
-					padding: 10px 20px;
-					color: var(--base);
-
-					&:hover {
-						background-color: var(--base-100);
-						border-radius: 10px;
-						text-decoration: none;
-					}
-				}
-			}
-		}
-
-		.mobile-toggle {
-			display: none;
-			color: var(--base-800);
-			padding: 10px;
-
-			@media (max-width:768px) {
-				display: inline-block;
-				position: absolute;
-				top: 20px;
-				right: 20px;
-			}
-		}
 	}
 
-	@media (max-width: 1024px) {
+	nav ul {
+		display: flex;
+		list-style-type: none;
+		gap: 10px;
+		padding: 0;
+		margin: 0;
+	}
+
+	nav li {
+		display: inline-block;
+	}
+
+	nav a {
+		display: inline-block;
+		padding: 10px 20px;
+		color: var(--base);
+		text-decoration: none;
+	}
+
+	nav a:hover {
+		background-color: var(--base-100);
+		border-radius: 10px;
+	}
+
+	nav button {
+		padding: 10px 20px;
+		background-color: var(--blue);
+		color: var(--base-100);
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	nav button:hover {
+		background-color: var(--blue-400);
+	}
+
+	body.dark-mode nav button {
+		background-color: var(--dark-accent);
+		color: var(--dark-text-primary);
+	}
+
+	body.dark-mode nav button:hover {
+		background-color: var(--dark-accent-hover);
+	}
+
+	.mobile-toggle {
+		display: none;
+		color: var(--base-800);
+		padding: 10px;
+
+		@media (max-width:768px) {
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	header {
 		flex-direction: column;
 		align-items: center;
 	}
+}
 
-	@media (max-width: 768px) {
+@media (max-width: 768px) {
+	html, body {
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	header {
 		flex-direction: column;
 		align-items: center;
-
+		padding: 5px;
 		nav {
 			margin-top: 10px;
 			width: 100%;
-
 			ul {
 				display: none;
 				flex-direction: column;
 				text-align: center;
 				width: 100%;
-
 				a {
 					width: 100%;
 				}
-
 				&.active {
 					display: flex;
 				}
 			}
 		}
 	}
+
+	.skills .left-column ul {
+		gap: 8px;
+		margin-right: 0;
+		justify-content: center;
+	}
+
+	.skills .left-column ul li {
+		padding: 10px 15px;
+		font-size: 0.9rem;
+		border-radius: 12px;
+		margin-bottom: 8px;
+		width: auto;
+		min-width: 120px;
+		transition: all 0.2s ease;
+	}
+
+	/* Dark mode specific mobile adjustments */
+	body.dark-mode .skills .left-column ul li {
+		background-color: var(--dark-accent);
+		color: var(--dark-text-primary);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	body.dark-mode .skills .left-column ul li:hover {
+		transform: scale(1.05);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Light mode mobile adjustments */
+	.skills .left-column ul li {
+		background-color: var(--blue-400);
+		color: var(--base-100);
+	}
+
+	.contact-container {
+		width: 100vw !important;
+		margin: 0 !important;
+		padding: 0 15px !important;
+	}
+
+	.right-contact form {
+		padding: 15px !important;
+		margin-top: 20px;
+	}
+
+	form input,
+	form textarea {
+		padding: 14px 20px !important;
+		font-size: 16px !important;
+		margin-bottom: 15px !important;
+	}
+
+	.sub-btn {
+		width: 100%;
+		padding: 16px !important;
+		font-size: 1rem !important;
+		margin-top: 10px;
+	}
+
+	.left-contact p {
+		font-size: 0.9rem;
+		margin-bottom: 15px;
+	}
+
+	/* Dark mode adjustments */
+	body.dark-mode .right-contact form {
+		padding: 15px !important;
+		background-color: var(--dark-base-200);
+	}
+
+	body.dark-mode form input,
+	body.dark-mode form textarea {
+		background-color: var(--dark-base-300);
+		font-size: 16px !important;
+	}
+
+	/* Improve placeholder visibility */
+	::placeholder {
+		font-size: 14px !important;
+		opacity: 0.8 !important;
+	}
+
+	/* Textarea specific adjustments */
+	form textarea {
+		min-height: 120px !important;
+	}
+
+	/* Input focus states */
+	form input:focus,
+	form textarea:focus {
+		transform: scale(1.02);
+		transition: transform 0.2s ease;
+	}
+
+	.right-contact form {
+		width: 100% !important;
+		max-width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	form input,
+	form textarea {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box;
+	}
+
+	/* Submit button width adjustment */
+	.sub-btn {
+		width: 100% !important;
+		max-width: none !important;
+	}
+
+	.left-contact {
+		margin-left: 20px !important;
+	}
+
+	/* Fix hero image overflow */
+	.hero-yellow img {
+		max-width: 100vw !important;
+		padding: 0 10px;
+	}
+
+	/* Marquee logo track fix */
+	.logos .track {
+		width: 100vw !important;
+		padding: 0 10px;
+	}
+
+	/* Bento grid overflow fix */
+	.bento-grid {
+		grid-template-columns: 1fr !important;
+		gap: 10px;
+		padding: 0 10px;
+	}
+
+	/* Project experience cards */
+	.work-experience article {
+		margin: 0 10px;
+		width: calc(100% - 20px);
+	}
+
+	/* Footer container adjustment */
+	footer .container {
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 20px 15px !important;
+	}
+
+	/* Force all images to stay within viewport */
+	img {
+		max-width: 100% !important;
+		height: auto;
+	}
+
+	.logos .track {
+		animation: marquee 10s linear infinite !important;
+	}
+}
+
+@keyframes marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
 }
 
 section {
@@ -165,6 +442,11 @@ section {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+
+	@media (max-width: 768px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 .button {
@@ -174,6 +456,9 @@ section {
 	color: var(--base-100);
 	border-radius: 10px;
 	transition: ease 0.3s all;
+	font-family: var(--body-font);
+	font-weight: 500;
+	letter-spacing: 0.02em;
 
 	&:hover {
 		text-decoration: none;
@@ -201,10 +486,23 @@ section {
 	}
 }
 
+@media (max-width: 768px) {
+	.button {
+		padding: 8px 20px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--heading-font);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
+
 h1 {
 	font-size: 64px;
-	line-height: 1;
 	margin-bottom: 10px;
+	letter-spacing: -0.03em;
 }
 
 h1 small {
@@ -213,6 +511,12 @@ h1 small {
 }
 
 @media (max-width: 1024px) {
+	h1 {
+		font-size: 48px;
+	}
+}
+
+@media (max-width: 768px) {
 	h1 {
 		font-size: 48px;
 	}
@@ -392,12 +696,24 @@ h2 {
 	}
 }
 
+@media (max-width: 768px) {
+	h2 {
+		font-size: 36px;
+	}
+}
+
 h3 {
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 1;
 	margin-bottom: 20px;
 	color: var(--base-800);
+}
+
+@media (max-width: 768px) {
+	h3 {
+		font-size: 24px;
+	}
 }
 
 .skills {
@@ -440,6 +756,19 @@ h3 {
 			}
 		}
 	}
+}
+
+/* Update skills section for dark mode */
+body.dark-mode .skills .holder-blue .left-column ul li {
+	background-color: var(--dark-accent);
+	color: var(--dark-text-primary);
+	transition: all 0.3s ease;
+}
+
+body.dark-mode .skills .holder-blue .left-column ul li:hover {
+	background-color: var(--dark-accent-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .work-experience {
@@ -657,7 +986,7 @@ h3 {
 
 .right-contact {
 	flex-basis: 60%;
-	max-width: 50%;
+	max-width: 90%;
 }
 
 .left-contact p i {
@@ -739,7 +1068,7 @@ form textarea:focus {
 	.contact-container {
 		width: 100vw;
 		height: auto;
-		padding: 0 5px;
+		padding: 10px 5px;
 	}
 
 	.left-contact {
@@ -801,13 +1130,11 @@ form textarea:focus {
 
 /* start footer */
 footer .container {
-
 	border-radius: 30px;
 	padding: 30px 0;
 	flex-basis: 65%;
 	height: 45vh;
 	background-color: var(--blue-100);
-	;
 	color: --base-800;
 	display: flex;
 	justify-content: space-evenly;
@@ -935,7 +1262,7 @@ footer .quic-links {
 	footer .container {
 		height: auto;
 		width: 100%;
-		padding: 25px 30px;
+		padding: 20px 15px;
 		display: flex;
 		flex-direction: column;
 		width: 84vw;
@@ -971,4 +1298,316 @@ footer .quic-links {
 		font-size: 12px;
 		height: auto;
 	}
+}
+
+.toggle-container {
+	width: 60px;
+	height: 30px;
+	background-color: #ccc;
+	border-radius: 15px;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 5px;
+	transition: background-color 0.3s ease;
+}
+
+.toggle-container.dark {
+	background-color: var(--dark-base-300);
+}
+
+.toggle-button {
+	width: 28px;
+	height: 28px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	transition: transform 0.3s ease;
+	z-index: 1;
+}
+
+.toggle-container.dark .toggle-button {
+	transform: translateX(30px);
+	background-color: var(--dark-text-primary);
+}
+
+.toggle-container::before {
+	content: '🌞';
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	font-size: 16px;
+	z-index: 0;
+}
+
+.toggle-container.dark::before {
+	content: '🌜';
+	left: auto;
+	right: 5px;
+}
+
+/* Footer dark mode improvements */
+body.dark-mode footer .container {
+	background-color: var(--dark-base-200);
+	border: 1px solid var(--dark-base-300);
+}
+
+body.dark-mode footer .copyright p {
+	color: var(--dark-text-secondary);
+}
+
+body.dark-mode footer .quic-links a {
+	color: var(--dark-text-secondary);
+}
+
+body.dark-mode footer .quic-links a:hover {
+	color: var(--dark-accent);
+	transform: translateX(5px);
+}
+
+body.dark-mode #copyright-message {
+	background-color: var(--dark-base-300);
+	color: var(--dark-text-secondary);
+	border-top: 1px solid var(--dark-base-400);
+}
+
+body.dark-mode .contact-info ul li {
+	background-color: var(--dark-base-300);
+}
+
+body.dark-mode .contact-info ul li:hover {
+	background-color: var(--dark-accent);
+}
+
+body.dark-mode .contact-info ul li a {
+	color: var(--dark-text-primary);
+}
+
+body.dark-mode footer h3 {
+	color: var(--dark-text-primary);
+}
+
+body.dark-mode #copyright-message p span {
+	color: var(--dark-accent);
+}
+
+/* Contact form dark mode improvements */
+body.dark-mode #contact .contact-container {
+	background-color: var(--dark-base-200);
+}
+
+body.dark-mode .right-contact form {
+	background-color: var(--dark-base-300);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+	background-color: var(--dark-base-300);
+	border: 1px solid var(--dark-base-400);
+	color: var(--dark-text-primary);
+}
+
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+	color: var(--dark-text-secondary);
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus {
+	border-color: var(--dark-accent);
+	box-shadow: 0 0 8px var(--dark-accent);
+}
+
+body.dark-mode .sub-btn {
+	background-color: var(--dark-accent);
+	color: var(--dark-text-primary);
+	border: 1px solid var(--dark-base-400);
+}
+
+body.dark-mode .sub-btn:hover {
+	background-color: var(--dark-accent-hover);
+	box-shadow: 0 0 15px var(--dark-accent);
+}
+
+body.dark-mode .left-contact p i {
+	color: var(--dark-accent);
+}
+
+body.dark-mode #msg {
+	color: var(--dark-accent);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+	body.dark-mode .right-contact form {
+		background-color: var(--dark-base-300);
+	}
+	
+	body.dark-mode form input,
+	body.dark-mode form textarea {
+		background-color: var(--dark-base-200);
+	}
+}
+
+/* Mobile First Improvements */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 10px 5px;
+    }
+
+    .logo-holder {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-text {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Hero section */
+    .hero {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+
+    .hero-blue h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-blue p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-yellow img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Skills section */
+    .skills .holder-blue {
+        padding: 20px;
+    }
+
+    .skills .left-column ul li {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* Project experience */
+    .work-experience article {
+        padding: 20px;
+    }
+
+    .work-experience article h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Contact form */
+    .contact-container h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .right-contact form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Footer adjustments */
+    footer .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    footer h3 {
+        font-size: 1.2rem;
+    }
+
+    /* General typography */
+    h2 {
+        font-size: 2rem;
+        padding: 20px 0;
+    }
+
+    /* Button adjustments */
+    .button {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Bento grid items */
+    .bento-item {
+        height: 200px !important;
+    }
+
+    /* Navigation menu */
+    nav ul.active {
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .left-contact {
+        margin-left: 20px !important;
+    }
+
+    .logos .track {
+        animation: marquee 10s linear infinite !important;
+    }
+}
+
+/* Additional small screen fixes */
+@media (max-width: 480px) {
+    /* Logo adjustments */
+    .logo {
+        height: 50px !important;
+        width: 50px !important;
+        font-size: 1.5rem !important;
+    }
+
+    /* Typography scaling */
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Form elements */
+    form input,
+    form textarea {
+        font-size: 16px !important;
+    }
+
+    /* Social icons */
+    .social-links img {
+        width: 40px !important;
+        margin: 5px;
+    }
+
+    /* Project cards */
+    .jobs article {
+        padding: 15px !important;
+    }
+}
+
+/* Optional: Add specific weight for bold text */
+strong {
+	font-weight: 700;
 }
