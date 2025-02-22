@@ -73,7 +73,7 @@ export default function Home() {
               <p>
                 Pursuing a BCA course in Data Science and Artificial Intelligence at BBD University, Lucknow.
                 Skilled in machine learning, deep learning, Python, web development, and Java, with hands-on
-                experience in projects like a Face Recognition Attendance System. Eager to apply technical
+                experience in projects like a Face Recognition Attendance System, Eager to apply technical
                 expertise to real-world challenges, driven by a passion for innovation and technology.
 
                 <span>I'm interested in AI topics which is why I also add things like ChatGPT into my projects
