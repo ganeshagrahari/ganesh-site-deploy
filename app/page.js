@@ -148,22 +148,27 @@ export default function Home() {
             <div className="left-column">
               <h3>Advanced</h3>
               <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
+                
                 <li>Python</li>
                 <li>Machine Learning</li>
-                <li>DeepLearning(CNN)</li>
-                <li>DSA</li>
-              </ul>
-              <h3>Learning</h3>
-              <ul>
-                <li>Node.js</li>
+                <li>DeepLearning</li>
+                <li>Data Science</li>
+                <li>Data Bases</li>
                 <li>Java</li>
+                <li>DSA</li>
+                <li>Web Development</li>
+                
+                
+              </ul>
+              <h3>Learning(Basic)</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>LeetCode(DSA)</li>
                 <li>PowerBi</li>
                 <li>Mongodb</li>
                 <li>Docker</li>
                 <li>Linux</li>
+                
               </ul>
             </div>
             <div className="right-column">
@@ -283,7 +288,7 @@ export default function Home() {
             <article>
               <figure>
                 <div>
-                  <img src="./imgs/WandaAI.webp" alt="Wanda AI" width="100%" />
+                  <img src="./imgs/WandaAI.png " alt="Wanda AI" width="100%" />
                   <figcaption>AI Desktop Assistant</figcaption>
                 </div>
               </figure>
