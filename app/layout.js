@@ -2,14 +2,28 @@
 
 import "./globals.css";
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function RootLayout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Initialize theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Priority order: 1. Saved theme 2. System preference
+    if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+      setDarkMode(true);
+      document.body.classList.add('dark-mode');
+    }
+  }, []);
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
     document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
   };
 
   return (
@@ -23,13 +37,12 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         {/* Removed script related to chatbot */}
       </Head>
-      <body className={darkMode ? 'dark-mode' : ''}>
+      <body>
         <header>
           <nav>
             <div 
               className={`toggle-container ${darkMode ? 'dark' : ''}`} 
               onClick={toggleDarkMode}
-              id="darkModeToggle"
             >
               <span className="emoji sun">🌞</span>
               <div className="toggle-button"></div>

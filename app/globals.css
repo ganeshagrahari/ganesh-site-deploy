@@ -33,6 +33,10 @@
 	--dark-accent-hover: #6d28d9;
 	--heading-font: 'Montserrat', sans-serif;
 	--body-font: 'Montserrat', sans-serif;
+	--dark-base-300: #2d2d2d;
+	--dark-base-400: #3d3d3d;
+	--dark-text-secondary: #b0b0b0;
+	--dark-accent-rgb: 124, 58, 237;
 }
 
 body {
@@ -424,6 +428,61 @@ header {
 	.logos .track {
 		animation: marquee 10s linear infinite !important;
 	}
+
+	/* Improve styling of home section for mobile view */
+	.hero {
+		flex-direction: column;
+		padding: 15px;
+	}
+
+	.hero-blue {
+		padding: 20px;
+		border-radius: 20px;
+		order: 2; /* Change order for mobile view */
+	}
+
+	.hero-blue h1 {
+		font-size: 36px;
+	}
+
+	.hero-blue p {
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.call-to-action {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
+	}
+
+	.call-to-action a {
+		margin-bottom: 10px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.social-links {
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.social-links a {
+		margin: 0 10px;
+	}
+
+	.hero-yellow {
+		padding: 10px;
+		margin-top: 20px;
+		border-radius: 20px;
+		order: 1; /* Change order for mobile view */
+	}
+
+	.hero-yellow img {
+		max-width: 100%;
+		height: auto;
+		margin: 0;
+	}
 }
 
 @keyframes marquee {
@@ -592,7 +651,7 @@ h1 small {
 	margin-top: -52px;
 	max-width: 470px;
 	margin-bottom: 10px;
-	margin-left: 30px;
+	margin-left: 8px;
 	transition: all 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 	animation: float 6s ease-in-out infinite;
 }
@@ -772,79 +831,211 @@ body.dark-mode .skills .holder-blue .left-column ul li:hover {
 }
 
 .work-experience {
-	.jobs {
-		display: flex;
-		gap: 30px;
+	position: relative;
+	padding: 4rem 0;
+}
 
-		@media(max-width:1024px) {
-			flex-direction: column;
-		}
+.work-experience:before {
+	content: '';
+	position: absolute;
+	left: 5%;
+	right: 5%;
+	bottom: 0;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, var(--blue-100), transparent);
+}
 
-		article {
-			background-color: var(--yellow-100);
-			padding: 30px;
-			border-radius: 30px;
-			flex: 1;
+body.dark-mode .work-experience:before {
+	background: linear-gradient(90deg, transparent, var(--dark-accent), transparent);
+}
 
-			h3 {
-				margin-top: 20px;
-				margin-bottom: 10px;
-			}
+.work-experience .jobs {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	padding: 2rem;
+}
 
-			div {
-				font-weight: 600;
-				margin-bottom: 5px;
-				color: var(--base-800);
-			}
-
-			p {
-				margin-bottom: 10px;
-			}
-
-			figure {
-				width: 100%;
-				padding-top: 56.25%;
-				overflow: hidden;
-				position: relative;
-				border-radius: 15px;
-
-				img {
-					position: absolute;
-					top: 0;
-					left: 0;
-					height: 100%;
-					object-fit: cover;
-					transition: ease 3s all;
-				}
-
-				figcaption {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					background-color: rgba(0, 0, 0, 0.5);
-					color: var(--base-100);
-					text-align: center;
-					padding: 10px;
-					opacity: 0;
-					visibility: hidden;
-					transition: ease 0.3s all;
-				}
-
-				&:hover {
-					figcaption {
-						opacity: 1;
-						visibility: visible;
-					}
-
-					img {
-						transform: scale(1.2);
-					}
-				}
-
-			}
-		}
+@media (max-width: 1200px) {
+	.work-experience .jobs {
+		grid-template-columns: repeat(3, 1fr);
 	}
+}
+
+@media (max-width: 900px) {
+	.work-experience .jobs {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.work-experience .jobs {
+		grid-template-columns: 1fr;
+	}
+}
+
+.work-experience article {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+				 box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.work-experience article:hover {
+	transform: translateY(-10px) scale(1.02);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+	border-color: rgba(0, 0, 0, 0.15);
+}
+
+.work-experience figure {
+	position: relative;
+	height: 280px;
+	overflow: hidden;
+}
+
+.work-experience img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-experience article:hover img {
+	transform: scale(1.08);
+}
+
+.work-experience figcaption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1.2rem;
+	background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+	color: white;
+	font-weight: 600;
+	font-size: 1.2rem;
+	text-align: center;
+	backdrop-filter: blur(2px);
+}
+
+.work-experience h3 {
+	margin: 1.5rem;
+	font-size: 1.6rem;
+	color: #1a1a1a;
+	text-align: center;
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.github-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.8rem 1.5rem;
+	margin: 1rem auto;
+	font-size: 0.95rem;
+	width: auto;
+	border-radius: 30px;
+	background: #f0f4ff;
+	color: #2a5cff;
+	transition: all 0.3s ease;
+	font-weight: 500;
+	border: 1px solid rgba(42, 92, 255, 0.15);
+	position: relative;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transition: 0.6s;
+}
+
+.github-link:hover::before {
+	left: 100%;
+}
+
+.github-link:hover {
+	transform: translateY(-3px) scale(1.05);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+	background: #2a5cff;
+	color: white;
+}
+
+.github-link:hover img {
+	transform: rotate(360deg) scale(1.1);
+}
+
+/* Dark mode specific hover effects */
+body.dark-mode .github-link::before {
+	background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255, 255, 255, 0.1),
+		transparent
+	);
+}
+
+body.dark-mode .github-link:hover {
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.github-link img {
+	width: 20px;
+	height: 20px;
+	transition: transform 0.3s ease;
+}
+
+/* Dark mode specific styles */
+body.dark-mode .github-link {
+	background: var(--dark-accent);
+	color: var(--dark-text-primary);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .github-link:hover {
+	background: var(--dark-accent-hover);
+	box-shadow: 0 4px 15px rgba(var(--dark-accent-rgb), 0.3);
+}
+
+/* Add glow effect for better visibility */
+.github-link {
+	--dark-accent-rgb: 124, 58, 237; /* Use your actual dark accent color RGB */
+}
+
+body.dark-mode .github-link {
+	box-shadow: 0 2px 8px rgba(var(--dark-accent-rgb), 0.2);
+}
+
+body.dark-mode .github-link:hover {
+	box-shadow: 0 4px 15px rgba(var(--dark-accent-rgb), 0.4);
+}
+
+/* Improve text contrast */
+body.dark-mode .github-link {
+	color: #ffffff !important;
+}
+
+/* Enhance icon visibility */
+body.dark-mode .github-link img {
+	filter: brightness(1.2);
 }
 
 .bento {
@@ -1169,7 +1360,7 @@ footer .container .contact-info {
 	gap: 20px;
 }
 
-footer .contact-info p i {
+footer .container .contact-info p i {
 	font-size: 20px;
 	margin-right: 10px;
 	color: var(--secondryColor);
@@ -1233,7 +1424,7 @@ footer .quic-links {
 	padding: 30px 0;
 	gap: 30px;
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	margin-left: 30px;
 	margin-right: 30px;
 	color: #555;
@@ -1300,314 +1491,211 @@ footer .quic-links {
 	}
 }
 
+/* Theme Toggle Styles */
 .toggle-container {
-	width: 60px;
-	height: 30px;
-	background-color: #ccc;
-	border-radius: 15px;
 	position: relative;
-	cursor: pointer;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	padding: 0 5px;
-	transition: background-color 0.3s ease;
-}
-
-.toggle-container.dark {
-	background-color: var(--dark-base-300);
+	gap: 10px;
+	padding: 4px;
+	width: 72px;
+	height: 40px;
+	background: var(--base-100);
+	border-radius: 30px;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-button {
+	position: absolute;
+	left: 4px;
 	width: 28px;
 	height: 28px;
-	background-color: #fff;
+	background: var(--yellow-400);
 	border-radius: 50%;
-	position: absolute;
-	left: 1px;
-	top: 1px;
-	transition: transform 0.3s ease;
-	z-index: 1;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .toggle-container.dark .toggle-button {
-	transform: translateX(30px);
-	background-color: var(--dark-text-primary);
+	transform: translateX(36px);
+	background: var(--dark-accent);
 }
 
-.toggle-container::before {
-	content: '🌞';
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	font-size: 16px;
-	z-index: 0;
+.emoji {
+	font-size: 1.2rem;
+	width: 28px;
+	text-align: center;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.toggle-container.dark::before {
-	content: '🌜';
-	left: auto;
-	right: 5px;
+.sun {
+	opacity: 1;
+	transform: translateX(0);
 }
 
-/* Footer dark mode improvements */
+.moon {
+	opacity: 0;
+	transform: translateX(10px);
+}
+
+.toggle-container.dark .sun {
+	opacity: 0;
+	transform: translateX(-10px);
+}
+
+.toggle-container.dark .moon {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Hover effects */
+.toggle-container:hover {
+	transform: scale(1.05);
+}
+
+.toggle-container:hover .toggle-button {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode container styling */
+body.dark-mode .toggle-container {
+	background: var(--dark-base-300);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* System preference detection */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		/* Your dark mode variables here */
+		--bg-color: #1a1a1a;
+		--text-color: #f5f5f5;
+	}
+}
+
+/* Fix sun emoji visibility */
+.toggle-container:not(.dark) .sun {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.toggle-container:not(.dark) .moon {
+  opacity: 0 !important;
+  transform: translateX(10px) !important;
+}
+
+/* Ensure emoji stacking */
+.emoji {
+  position: relative;
+  z-index: 1; /* Bring emojis above toggle button */
+}
+
+.toggle-button {
+  z-index: 0; /* Send button behind emojis */
+}
+
+/* Footer dark mode styling */
+body.dark-mode footer {
+  background: var(--dark-base-400);
+  border-top: 2px solid var(--dark-accent);
+}
+
+body.dark-mode #copyright-message p {
+  color: var(--dark-text-primary);
+  opacity: 0.9;
+}
+
+body.dark-mode footer .social-links a {
+  background: var(--dark-base-300);
+  border: 1px solid var(--dark-accent);
+}
+
+body.dark-mode footer .social-links a:hover {
+  background: var(--dark-accent);
+  box-shadow: 0 4px 15px rgba(var(--dark-accent-rgb), 0.3);
+}
+
+/* Contact section improvements */
+body.dark-mode .contact-section {
+  background: var(--dark-base-300);
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+body.dark-mode .contact-section h2 {
+  color: var(--dark-text-primary);
+  border-bottom: 2px solid var(--dark-accent);
+  padding-bottom: 1rem;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: var(--dark-base-400);
+  color: var(--dark-text-primary);
+  border: 1px solid var(--dark-base-200);
+}
+
+body.dark-mode .contact-form button {
+  background: var(--dark-accent);
+  color: var(--dark-text-primary);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .contact-form button:hover {
+  background: var(--dark-accent-hover);
+  transform: translateY(-2px);
+}
+
 body.dark-mode footer .container {
-	background-color: var(--dark-base-200);
-	border: 1px solid var(--dark-base-300);
+  background-color: var(--dark-base-300); /* Change to a lighter dark color for better visibility */
+  color: var(--dark-text-primary);
 }
 
-body.dark-mode footer .copyright p {
-	color: var(--dark-text-secondary);
+body.dark-mode footer .copyright {
+  color: var(--dark-text-primary);
 }
 
 body.dark-mode footer .quic-links a {
-	color: var(--dark-text-secondary);
+  color: var(--dark-text-secondary);
 }
 
 body.dark-mode footer .quic-links a:hover {
-	color: var(--dark-accent);
-	transform: translateX(5px);
+  color: var(--dark-accent);
 }
 
-body.dark-mode #copyright-message {
-	background-color: var(--dark-base-300);
-	color: var(--dark-text-secondary);
-	border-top: 1px solid var(--dark-base-400);
+body.dark-mode footer .contact-info p {
+  color: var(--dark-text-primary);
 }
 
-body.dark-mode .contact-info ul li {
-	background-color: var(--dark-base-300);
+body.dark-mode footer .contact-info ul li {
+  background-color: var(--dark-base-400);
 }
 
-body.dark-mode .contact-info ul li:hover {
-	background-color: var(--dark-accent);
+body.dark-mode footer .contact-info ul li:hover {
+  background-color: var(--dark-accent);
 }
 
-body.dark-mode .contact-info ul li a {
-	color: var(--dark-text-primary);
+body.dark-mode footer .contact-info ul li a {
+  color: var(--dark-text-primary);
 }
 
-body.dark-mode footer h3 {
-	color: var(--dark-text-primary);
+body.dark-mode footer .contact-info ul li a:hover {
+  color: var(--dark-text-primary);
 }
 
-body.dark-mode #copyright-message p span {
-	color: var(--dark-accent);
+/* Dark mode adjustments for form placeholders */
+body.dark-mode ::placeholder {
+  color: var(--dark-text-secondary); /* Adjust the color as needed for better visibility */
+  opacity: 0.8; /* Ensure the placeholder text is visible */
 }
 
-/* Contact form dark mode improvements */
-body.dark-mode #contact .contact-container {
-	background-color: var(--dark-base-200);
-}
-
-body.dark-mode .right-contact form {
-	background-color: var(--dark-base-300);
-	border-radius: 15px;
-	padding: 20px;
-}
-
-body.dark-mode form input,
-body.dark-mode form textarea {
-	background-color: var(--dark-base-300);
-	border: 1px solid var(--dark-base-400);
-	color: var(--dark-text-primary);
-}
-
-body.dark-mode form input::placeholder,
-body.dark-mode form textarea::placeholder {
-	color: var(--dark-text-secondary);
-}
-
-body.dark-mode form input:focus,
-body.dark-mode form textarea:focus {
-	border-color: var(--dark-accent);
-	box-shadow: 0 0 8px var(--dark-accent);
-}
-
-body.dark-mode .sub-btn {
-	background-color: var(--dark-accent);
-	color: var(--dark-text-primary);
-	border: 1px solid var(--dark-base-400);
-}
-
-body.dark-mode .sub-btn:hover {
-	background-color: var(--dark-accent-hover);
-	box-shadow: 0 0 15px var(--dark-accent);
-}
-
-body.dark-mode .left-contact p i {
-	color: var(--dark-accent);
-}
-
-body.dark-mode #msg {
-	color: var(--dark-accent);
-}
-
-/* Mobile specific adjustments */
-@media (max-width: 640px) {
-	body.dark-mode .right-contact form {
-		background-color: var(--dark-base-300);
-	}
-	
-	body.dark-mode form input,
-	body.dark-mode form textarea {
-		background-color: var(--dark-base-200);
-	}
-}
-
-/* Mobile First Improvements */
-@media (max-width: 768px) {
-    /* Header adjustments */
-    header {
-        padding: 10px 5px;
-    }
-
-    .logo-holder {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo-text {
-        margin-top: 10px;
-        font-size: 1.2rem;
-    }
-
-    /* Hero section */
-    .hero {
-        flex-direction: column-reverse;
-        margin-top: 20px;
-    }
-
-    .hero-blue h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
-    }
-
-    .hero-blue p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .hero-yellow img {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    /* Skills section */
-    .skills .holder-blue {
-        padding: 20px;
-    }
-
-    .skills .left-column ul li {
-        width: 100%;
-        text-align: center;
-        padding: 12px;
-    }
-
-    /* Project experience */
-    .work-experience article {
-        padding: 20px;
-    }
-
-    .work-experience article h3 {
-        font-size: 1.3rem;
-    }
-
-    /* Contact form */
-    .contact-container h1 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-
-    .right-contact form {
-        width: 100%;
-        padding: 15px;
-    }
-
-    /* Footer adjustments */
-    footer .container {
-        padding: 20px;
-        margin: 20px;
-    }
-
-    footer h3 {
-        font-size: 1.2rem;
-    }
-
-    /* General typography */
-    h2 {
-        font-size: 2rem;
-        padding: 20px 0;
-    }
-
-    /* Button adjustments */
-    .button {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    /* Bento grid items */
-    .bento-item {
-        height: 200px !important;
-    }
-
-    /* Navigation menu */
-    nav ul.active {
-        padding: 10px 0;
-    }
-
-    nav ul li a {
-        padding: 12px 15px;
-        font-size: 0.9rem;
-    }
-
-    .left-contact {
-        margin-left: 20px !important;
-    }
-
-    .logos .track {
-        animation: marquee 10s linear infinite !important;
-    }
-}
-
-/* Additional small screen fixes */
-@media (max-width: 480px) {
-    /* Logo adjustments */
-    .logo {
-        height: 50px !important;
-        width: 50px !important;
-        font-size: 1.5rem !important;
-    }
-
-    /* Typography scaling */
-    h1 {
-        font-size: 2rem !important;
-    }
-
-    h2 {
-        font-size: 1.8rem !important;
-    }
-
-    /* Form elements */
-    form input,
-    form textarea {
-        font-size: 16px !important;
-    }
-
-    /* Social icons */
-    .social-links img {
-        width: 40px !important;
-        margin: 5px;
-    }
-
-    /* Project cards */
-    .jobs article {
-        padding: 15px !important;
-    }
-}
-
-/* Optional: Add specific weight for bold text */
-strong {
-	font-weight: 700;
+/* Specific adjustments for the contact form */
+body.dark-mode .right-contact form input::placeholder,
+body.dark-mode .right-contact form textarea::placeholder {
+  color: var(--dark-text-secondary); /* Adjust the color as needed for better visibility */
+  opacity: 0.8; /* Ensure the placeholder text is visible */
 }
