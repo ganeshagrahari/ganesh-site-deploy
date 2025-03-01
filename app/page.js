@@ -267,7 +267,7 @@ export default function Home() {
                 </div>
               </figure>
               <h3>Climate Change Model</h3>
-              <a href="https://github.com/ganeshagrahari/Unified-Mentor-Internship/tree/main/Climate%20Change%20Model" className="github-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ganeshagrahari/Climate-Change-Model" className="github-link" target="_blank" rel="noopener noreferrer">
                 <img src="./imgs/github.png" alt="GitHub" width="20" />
                 View Code
               </a>
