@@ -214,7 +214,7 @@ export default function Home() {
                   <figcaption>Movie Recommendation System</figcaption>
                 </div>
               </figure>
-              <h3>Movie Recommendation System</h3>
+              <h3>Cine Match pro(Movie Recommender)</h3>
               <a href="https://github.com/ganeshagrahari/Cine-Match-Pro-Movie-Recommender" className="github-link" target="_blank" rel="noopener noreferrer">
                 <img src="./imgs/github.png" alt="GitHub" width="20" />
                 View Code
