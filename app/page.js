@@ -198,7 +198,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/workplace-1.png" alt="Face Recognition Attendance System" width="100%" />
-                  <figcaption>Face Recognition Attendance System</figcaption>
+                  <figcaption>Face Recognition Attendance System using CNN</figcaption>
                 </div>
               </figure>
               <h3>Face Recognition Attendance System</h3>
@@ -210,12 +210,12 @@ export default function Home() {
             <article>
               <figure>
                 <div>
-                  <img src="./imgs/workplace-2_new.png" alt="Movie Recommendation System" width="100%" />
+                  <img src="./imgs/workplace-2_new.png" alt="Cine Match pro(Movie Recommender)" width="100%" />
                   <figcaption>Movie Recommendation System</figcaption>
                 </div>
               </figure>
               <h3>Movie Recommendation System</h3>
-              <a href="https://github.com/ganeshagrahari/Movie-Recommendation-System" className="github-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ganeshagrahari/Cine-Match-Pro-Movie-Recommender" className="github-link" target="_blank" rel="noopener noreferrer">
                 <img src="./imgs/github.png" alt="GitHub" width="20" />
                 View Code
               </a>
@@ -224,7 +224,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/workplace-3_new.png" alt="Reliance Sales Report" width="100%" />
-                  <figcaption>Reliance Sales Report</figcaption>
+                  <figcaption>Power BI Sales Report</figcaption>
                 </div>
               </figure>
               <h3>Reliance Sales Report</h3>
@@ -237,7 +237,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/MydeepseekSS.png" alt="My DeepSeek AI Assistant" width="100%" />
-                  <figcaption>My DeepSeek</figcaption>
+                  <figcaption>AI Assistant on Desktop using Ollama</figcaption>
                 </div>
               </figure>
               <h3>My DeepSeek AI Assistant</h3>
@@ -250,7 +250,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/SMS-SpamSS.png" alt="SMS Spam Classifier" width="100%" />
-                  <figcaption>Spam Detection System</figcaption>
+                  <figcaption>Spam Detection using Naive Bayes</figcaption>
                 </div>
               </figure>
               <h3>SMS/Email Spam Classifier</h3>
@@ -263,7 +263,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/ClimateChangeModel.png" alt="Climate Change Model" width="100%" />
-                  <figcaption>Climate Change Model</figcaption>
+                  <figcaption>Climate Change Model using Random Forest</figcaption>
                 </div>
               </figure>
               <h3>Climate Change Model</h3>
@@ -276,7 +276,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/fifa.png" alt="FIFA World Cup Analysis" width="100%" />
-                  <figcaption>FIFA World Cup Analysis</figcaption>
+                  <figcaption>Power BI World Cup Analysis</figcaption>
                 </div>
               </figure>
               <h3>FIFA World Cup Analysis</h3>
@@ -289,7 +289,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/WandaAI.png " alt="Wanda AI" width="100%" />
-                  <figcaption>AI Desktop Assistant</figcaption>
+                  <figcaption>AI Desktop Assistant using Python</figcaption>
                 </div>
               </figure>
               <h3>Wanda AI</h3>
