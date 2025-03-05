@@ -210,6 +210,19 @@ export default function Home() {
             <article>
               <figure>
                 <div>
+                  <img src="./imgs/ChatAna.png " alt="Wanda AI" width="100%" />
+                  <figcaption>WhatsApp Chat Analyzer built on streamlit</figcaption>
+                </div>
+              </figure>
+              <h3>Chat Analyzer</h3>
+              <a href="https://github.com/ganeshagrahari/Chat-Analyzer" className="github-link" target="_blank" rel="noopener noreferrer">
+                <img src="./imgs/github.png" alt="GitHub" width="20" />
+                View Code
+              </a>
+            </article>
+            <article>
+              <figure>
+                <div>
                   <img src="./imgs/workplace-2_new.png" alt="Cine Match pro(Movie Recommender)" width="100%" />
                   <figcaption>Movie Recommendation System</figcaption>
                 </div>
@@ -263,7 +276,7 @@ export default function Home() {
               <figure>
                 <div>
                   <img src="./imgs/ClimateChangeModel.png" alt="Climate Change Model" width="100%" />
-                  <figcaption>Climate Change Model using Random Forest</figcaption>
+                  <figcaption>Sentiment Analysis</figcaption>
                 </div>
               </figure>
               <h3>Climate Change Model</h3>
@@ -285,19 +298,7 @@ export default function Home() {
                 View Code
               </a>
             </article>
-            <article>
-              <figure>
-                <div>
-                  <img src="./imgs/WandaAI.png " alt="Wanda AI" width="100%" />
-                  <figcaption>AI Desktop Assistant using Python</figcaption>
-                </div>
-              </figure>
-              <h3>Wanda AI</h3>
-              <a href="https://github.com/ganeshagrahari/Python-WANDA-AI" className="github-link" target="_blank" rel="noopener noreferrer">
-                <img src="./imgs/github.png" alt="GitHub" width="20" />
-                View Code
-              </a>
-            </article>
+            
           </div>
         </section>
         <section id="projects" className="bento container">
