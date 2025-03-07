@@ -71,13 +71,9 @@ export default function Home() {
               </h1>
 
               <p>
-                Pursuing a BCA course in Data Science and Artificial Intelligence at BBD University, Lucknow.
-                Skilled in machine learning, deep learning, Python, web development, and Java, with hands-on
-                experience in projects like a Face Recognition Attendance System, Eager to apply technical
-                expertise to real-world challenges, driven by a passion for innovation and technology.
+              Pursuing a BCA (Data Science and AI) at BBD University, Lucknow. Skilled in machine learning, deep learning, Python, web development, and Java, with hands-on experience in projects like a Face Recognition Attendance System. Currently exploring neural networks, PyTorch, and AI-driven development, integrating technologies like ChatGPT into my projects. I also developed and deployed a Chat Analyzer as a web service using NLP.
 
-                <span>I'm interested in AI topics which is why I also add things like ChatGPT into my projects
-                  these days.</span>
+                
               </p>
 
               <div className="call-to-action">
@@ -95,8 +91,8 @@ export default function Home() {
                 <a href="https://www.linkedin.com/in/ganesh-agrahari-727746263/" target="_blank">
                   <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
                 </a>
-                <a href="https://www.instagram.com/quantum_viag/" target="_blank">
-                  <img src="./imgs/instagram.png" alt="instagram" width="60" />
+                <a href="https://leetcode.com/u/ganeshagrahari/" target="_blank">
+                  <img src="./imgs/LeetCodeLogo.png" alt="instagram" width="48" />
                 </a>
                 <a href="mailto:ganeshagrahari108@gmail.com" target="_blank">
                   <img src="./imgs/email.png" alt="email" width="43" />
@@ -174,13 +170,13 @@ export default function Home() {
             <div className="right-column">
               <h3>Education & My project Experties</h3>
               <p>
-                Ganesh Agrahari is pursuing a BCA in Data Science and Artificial Intelligence at BBD University,
-                Lucknow, expecting to graduate in September 2026. They have strong skills in machine learning, deep learning (CNN),
+                I'm pursuing a BCA in Data Science and Artificial Intelligence at BBD University,
+                Lucknow, expecting to graduate in September 2026. I have strong skills in machine learning, deep learning ,
                 Python, Java (including DSA), web development (HTML, CSS, JavaScript, Node.js), and data visualization using Power BI...
               </p>
               <p>
-                Ganesh's projects include a Face Recognition Attendance System using Python, OpenCV, and deep learning, as well as a Movie Recommendation System leveraging Python libraries like Pandas and Scikit-learn.
-                They have also built a portfolio website showcasing their technical expertise and projects...
+              My projects include a Face Recognition Attendance System using Python, OpenCV, and deep learning, as well as a Chat Analyzer, which I have developed and deployed as a
+               web service using NLP. I have also built a portfolio website showcasing my technical expertise and projects.
               </p>
               <p>You can check My project on github repositories mentioned below :</p>
               <div className="social-links"><a href="https://github.com/ganeshagrahari?tab=repositories" target="_blank" >
