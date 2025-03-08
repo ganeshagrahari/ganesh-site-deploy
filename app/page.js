@@ -210,9 +210,9 @@ export default function Home() {
                 </div>
               </figure>
               <h3>Chat Analyzer</h3>
-              <a href="https://github.com/ganeshagrahari/Chat-Analyzer" className="github-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://chat-analyzer-n4q2.onrender.com/" className="github-link" target="_blank" rel="noopener noreferrer">
                 <img src="./imgs/github.png" alt="GitHub" width="20" />
-                View Code
+                View Live
               </a>
             </article>
             <article>
@@ -270,14 +270,14 @@ export default function Home() {
             <article>
               <figure>
                 <div>
-                  <img src="./imgs/ClimateChangeModel.png" alt="Climate Change Model" width="100%" />
-                  <figcaption>Sentiment Analysis</figcaption>
+                  <img src="./imgs/portfolio.png" alt="Climate Change Model" width="100%" />
+                  <figcaption>My Portfolio on nextjs framework </figcaption>
                 </div>
               </figure>
-              <h3>Climate Change Model</h3>
-              <a href="https://github.com/ganeshagrahari/Climate-Change-Model" className="github-link" target="_blank" rel="noopener noreferrer">
+              <h3>Ganesh Site </h3>
+              <a href="https://ganesh-portfolio-site.vercel.app/" className="github-link" target="_blank" rel="noopener noreferrer">
                 <img src="./imgs/github.png" alt="GitHub" width="20" />
-                View Code
+                View Live
               </a>
             </article>
             <article>
@@ -320,7 +320,7 @@ export default function Home() {
               <img src="./imgs/workplace-5.png" alt="workplace-5" width="100%" />
             </a>
             <a href="#" className="bento-item">
-              <img src="./imgs/workplace-6.jpg" alt="School" width="100%" />
+              <img src="./imgs/ClimateChangeModel.png" alt="School" width="100%" />
             </a>
           </div>
         </section>
