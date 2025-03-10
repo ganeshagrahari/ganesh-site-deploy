@@ -71,7 +71,7 @@ export default function Home() {
               </h1>
 
               <p>
-              Pursuing a BCA (Data Science and AI) at BBD University, Lucknow. Skilled in machine learning, deep learning, Python, web development, and Java,<i><b> with hands-on experience in projects like a Face Recognition Attendance System.</b></i> Currently exploring neural networks, PyTorch, and AI-driven development. <i><b>I also developed and deployed a Chat Analyzer as a web service using NLP.</b></i>  
+              Pursuing a BCA (Data Science and AI) at BBD University, Lucknow. Skilled in machine learning, deep learning, Python, web development, and Java,<b> with hands-on experience in projects like a Face Recognition Attendance System.</b> Currently exploring neural networks, PyTorch, and AI-driven development. <b>I also developed and deployed a Chat Analyzer as a web service using NLP.</b>  
 
                 
               </p>
@@ -170,12 +170,11 @@ export default function Home() {
             <div className="right-column">
               <h3>Education & My Professional Experience</h3>
               <p>
-              I'm pursuing a BCA in Data Science and AI at BBD University, Lucknow, expecting to graduate in September 2026. I have strong skills in machine learning, deep learning, Python, Java (DSA), web development, and Power BI.<i> <b>I gained hands-on experience through internships at Unified Mentor, working on NLP, chatbot development, 
-              and AI solutions, and at Twilearn, where I'm currently enhancing my expertise in data science.</b></i>
+              I'm pursuing a BCA in Data Science and AI at BBD University, Lucknow, expecting to graduate in September 2026. I have strong skills in machine learning, deep learning, Python, Java (DSA), web development, and Power BI. <b>I gained hands-on experience through internships at Unified Mentor, working on NLP, chatbot development, 
+              and AI solutions, and at Twilearn, where I'm currently enhancing my expertise in data science.</b>
               </p>
               <p>
-              My projects include a <i><b>Face Recognition Attendance System using Python, OpenCV, and deep learning, as well as a Chat Analyzer,</b></i> which I have developed and deployed as a
-               web service using NLP. I have also built a portfolio website showcasing my technical expertise and projects.
+              My projects include a <b>Face Recognition Attendance System </b>using Python, OpenCV, and deep learning, as well as a<b> Chat Analyzer</b>, which I have developed and deployed as a web service using NLP. I have also built a <b>fantastic portfolio using Next.js</b> and successfully deployed it, showcasing my technical expertise and projects.
               </p>
               <p>You can check My project on github repositories mentioned below :</p>
               <div className="social-links"><a href="https://github.com/ganeshagrahari?tab=repositories" target="_blank" >
