@@ -91,11 +91,11 @@ export default function Home() {
                 <a href="https://www.linkedin.com/in/ganesh-agrahari-727746263/" target="_blank">
                   <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
                 </a>
-                <a href="https://leetcode.com/u/ganeshagrahari/" target="_blank">
-                  <img src="./imgs/LeetCodeLogo.png" alt="instagram" width="48" />
+                <a href="https://www.hackerrank.com/profile/ganeshagrahari11" target="_blank">
+                  <img src="./imgs/HackerRankLogo.png" alt="HackerRank" width="47" />
                 </a>
                 <a href="mailto:ganeshagrahari108@gmail.com" target="_blank">
-                  <img src="./imgs/email.png" alt="email" width="43" />
+                  <img src="./imgs/email.png" alt="email" width="47" />
                 </a>
               </div>
             </div>
