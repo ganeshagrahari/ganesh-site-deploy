@@ -1,24 +1,28 @@
-"use client";
+"use client"; // Indicates this is a client-side rendered component
+
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
+// Main Home component
 export default function Home() {
+  // State to manage the mobile menu toggle
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Function to toggle the mobile menu
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+ // useEffect to load and initialize the Typed.js library for dynamic text animation
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js";
     script.onload = () => {
       var options = {
         strings: [
+
           "Ganesh Agrahari",
+          "An AI Expert",
           "Python Expert ",
           "ML Expert ",
-          "an AI Enthusiast",
           "a Data Scientist ",
           "a Web Developer",
         ],
@@ -27,18 +31,23 @@ export default function Home() {
         loop: true,
       };
 
-      new Typed(".auto-type", options);
+      new Typed(".auto-type", options); // Initialize Typed.js with options
     };
-    document.body.appendChild(script);
+    document.body.appendChild(script); // Append the script to the document body
   }, []);
-
+  // Main HTML content of the page
   return (
-    <><header>
+    <>
+        {/* Header Section */}
+        <header>
+         {/* Logo and branding */}
       <a href="#" className="logo-holder">
         <div className="logo">G</div>
         <div className="logo-text">Ganesh Agrahari</div>
       </a>
       <link rel="icon" type="image/jpg" href="./imgs/favicon.jpg"></link>
+
+      {/* Navigation menu */}
       <nav>
         <ul id="menu" className={menuOpen ? "active" : ""}>
           <li>
@@ -54,6 +63,8 @@ export default function Home() {
             <a href="mailto:ganeshagrahari108@gmail.com" className="button">Contact Me</a>
           </li>
         </ul>
+
+        {/* Mobile menu toggle button */}
         <a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
           <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
             width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -62,20 +73,23 @@ export default function Home() {
         </a>
       </nav>
     </header>
+    {/* Main Content */}
       <main>
         <section id="home" className="hero container">
           <div className="hero-blue">
             <div>
               <h1><small>Hi I'm</small>
-                <span className="auto-type"></span>
+                <span className="auto-type"></span> {/* Dynamic text animation */}
               </h1>
 
               <p>
-              Pursuing a BCA (Data Science and AI) at BBD University, Lucknow. Skilled in machine learning, deep learning, Python, web development, and Java,<b> with hands-on experience in projects like a Face Recognition Attendance System.</b> Currently exploring neural networks, PyTorch, and AI-driven development. <b>I also developed and deployed a Chat Analyzer as a web service using NLP.</b>  
 
-                
+                {/* Brief introduction */}
+                Pursuing a BCA (Data Science and AI) at BBD University, Lucknow. Skilled in machine learning, deep learning, Python, web development, and Java,<b> with hands-on experience in projects like a Face Recognition Attendance System.</b> Currently exploring neural networks, PyTorch, and AI-driven development. <b>I also developed and deployed a Chat Analyzer as a web service using NLP.</b>
+
+
               </p>
-
+                {/* Call-to-action buttons */}
               <div className="call-to-action">
                 <a href="./Ganesh Agrahari Resume.pdf" className="button black">
                   View Resume
@@ -84,6 +98,7 @@ export default function Home() {
                   Contact Me
                 </a>
               </div>
+               {/* Social media links */}
               <div className="social-links">
                 <a href="https://github.com/ganeshagrahari" target="_blank">
                   <img src="./imgs/github.png" alt="GitHub" width="48" />
@@ -100,13 +115,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/*Hero- image*/}
           <div className="hero-yellow">
-            <img src="./imgs/hero-image.png" alt="Adrian Twarog" width="100%" />
+            <img src="./imgs/hero-image.png" alt="Ganesh Agrahari" width="100%" />
           </div>
         </section>
+
+        {/* Logos Section */}
         <section className="logos container">
           <div className="marquee">
             <div className="track">
+              {/* Technology logos */}
               <img src="./imgs/html.png" alt="HTML" width="128" />
               <img src="./imgs/css.png" alt="CSS" width="128" />
               <img src="./imgs/javascript.png" alt="JS" width="128" />
@@ -135,59 +154,15 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="skills" className="skills container">
-          <h2>
-            <small>About Me</small>
-            Skills
-          </h2>
-          <div className="holder-blue">
-            <div className="left-column">
-              <h3>Advanced</h3>
-              <ul>
-                
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>DeepLearning</li>
-                <li>Data Science</li>
-                <li>Data Bases</li>
-                <li>Java</li>
-                <li>DSA</li>
-                <li>Web Development</li>
-                
-                
-              </ul>
-              <h3>Learning(Basic)</h3>
-              <ul>
-                <li>PyTorch</li>
-                <li>LeetCode(DSA)</li>
-                <li>PowerBi</li>
-                <li>Mongodb</li>
-                <li>Docker</li>
-                <li>Linux</li>
-                
-              </ul>
-            </div>
-            <div className="right-column">
-              <h3>Education & My Professional Experience</h3>
-              <p>
-              I'm pursuing a BCA in Data Science and AI at BBD University, Lucknow, expecting to graduate in September 2026. I have strong skills in machine learning, deep learning, Python, Java (DSA), web development, and Power BI. <b>I gained hands-on experience through internships at Unified Mentor, working on NLP, chatbot development, 
-              and AI solutions, and at Twilearn, where I'm currently enhancing my expertise in data science.</b>
-              </p>
-              <p>
-              My projects include a <b>Face Recognition Attendance System </b>using Python, OpenCV, and deep learning, as well as a<b> Chat Analyzer</b>, which I have developed and deployed as a web service using NLP. I have also built a <b>fantastic portfolio using Next.js</b> and successfully deployed it, showcasing my technical expertise and projects.
-              </p>
-              <p>You can check My project on github repositories mentioned below :</p>
-              <div className="social-links"><a href="https://github.com/ganeshagrahari?tab=repositories" target="_blank" >
-                <img src="./imgs/githubrepo.png" alt="GitHub" width="60" /></a></div>
-            </div>
-          </div>
-        </section>
+        {/* Recent Project Experience Section */}
+
         <section id="recent project-ex" className="work-experience container">
           <h2>
             <small>Recent</small>
             Project Experience
           </h2>
           <div className="jobs">
+             {/* Individual project cards */}
             <article>
               <figure>
                 <div>
@@ -201,6 +176,7 @@ export default function Home() {
                 View Code
               </a>
             </article>
+            {/* Additional project cards follow the same structure */}
             <article>
               <figure>
                 <div>
@@ -292,9 +268,10 @@ export default function Home() {
                 View Code
               </a>
             </article>
-            
+
           </div>
         </section>
+         {/* Previous Completed Projects */}
         <section id="projects" className="bento container">
           <h2>
             <small>
@@ -321,6 +298,58 @@ export default function Home() {
             <a href="#" className="bento-item">
               <img src="./imgs/ClimateChangeModel.png" alt="School" width="100%" />
             </a>
+          </div>
+        </section>
+
+         {/* Skills Section */}
+        <section id="skills" className="skills container">
+          <h2>
+            <small>About Me</small>
+            Skills
+          </h2>
+          <div className="holder-blue">
+            <div className="left-column">
+               {/* List of advanced skills */}
+              <h3>Advanced</h3>
+              <ul>
+
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>DeepLearning</li>
+                <li>Data Science</li>
+                <li>Data Bases</li>
+                <li>Java</li>
+                <li>DSA</li>
+                <li>Web Development</li>
+
+
+              </ul>
+              {/* List of skills currently being learned */}
+              <h3>Learning(Basic)</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>LeetCode(DSA)</li>
+                <li>PowerBi</li>
+                <li>Mongodb</li>
+                <li>Docker</li>
+                <li>Linux</li>
+
+              </ul>
+            </div>
+            <div className="right-column">
+              {/* Education and professional experience */}
+              <h3>Education & My Professional Experience</h3>
+              <p>
+                I'm pursuing a BCA in Data Science and AI at BBD University, Lucknow, expecting to graduate in September 2026. I have strong skills in machine learning, deep learning, Python, Java (DSA), web development, and Power BI. <b>I gained hands-on experience through internships at Unified Mentor, working on NLP, chatbot development,
+                  and AI solutions, and at Twilearn, where I'm currently enhancing my expertise in data science.</b>
+              </p>
+              <p>
+                My projects include a <b>Face Recognition Attendance System </b>using Python, OpenCV, and deep learning, as well as a<b> Chat Analyzer</b>, which I have developed and deployed as a web service using NLP. I have also built a <b>fantastic portfolio using Next.js</b> and successfully deployed it, showcasing my technical expertise and projects.
+              </p>
+              <p>You can check My project on github repositories mentioned below :</p>
+              <div className="social-links"><a href="https://github.com/ganeshagrahari?tab=repositories" target="_blank" >
+                <img src="./imgs/githubrepo.png" alt="GitHub" width="60" /></a></div>
+            </div>
           </div>
         </section>
         <section id="contact" className="chatbot container">
