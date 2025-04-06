@@ -161,6 +161,14 @@ a {
         text-decoration: underline;
     }
 }
+body.dark-mode a.button:hover {
+    background-color: var(--dark-accent-hover);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
 
 /* ==========================================================================
    Header Styles
@@ -604,7 +612,7 @@ section {
         color: var(--base-800);
 
         &:hover {
-            background-color: var(--base-100);
+            background-color: var(--base-800);
             color: var(--base);
         }
     }
