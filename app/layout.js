@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
     script2.src = "https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js";
     script2.async = true;
     document.body.appendChild(script2);
-    //Cleanup function to remove scripts when component unmounts
+
     return () => {
       document.body.removeChild(script1);
       document.body.removeChild(script2);
