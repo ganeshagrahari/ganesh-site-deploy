@@ -1,13 +1,14 @@
 "use client"; // Indicates this is a client-side component
 
 import "./globals.css";  // Import global styles
-import Head from "next/head"; // Import Head for managing document head
-import { useState, useEffect } from "react";// Import React hooks
+import Head from "next/head"; 
+import Script from "next/script"; 
+import { useState, useEffect } from "react";
 
 export default function RootLayout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Initialize theme and inject Botpress Chatbot script
+  // Initialize theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -28,12 +29,13 @@ export default function RootLayout({ children }) {
     script2.src = "https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js";
     script2.async = true;
     document.body.appendChild(script2);
-
+    //Cleanup function to remove scripts when component unmounts
     return () => {
       document.body.removeChild(script1);
       document.body.removeChild(script2);
     };
   }, []);
+
   // Function to toggle dark mode
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
@@ -58,8 +60,22 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Preload Botpress scripts for faster load  */}
+        <link rel="preload" href="https://cdn.botpress.cloud/webchat/v2.2/inject.js" as="script" />
+        <link rel="preload" href="https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js" as="script" />
       </Head>
       <body>
+        {/* Add Script components for optimal loading */}
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js"
+          strategy="afterInteractive"
+          onLoad={() => console.log('Chatbot script loaded')}
+        />
+        
         <header>
           <nav>
             {/* Dark mode toggle */}
@@ -73,6 +89,7 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
         </header>
+       
         {/*render child components */}
         {children}
       </body>
