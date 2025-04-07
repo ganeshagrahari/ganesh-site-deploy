@@ -1,8 +1,8 @@
 "use client"; // Indicates this is a client-side component
 
 import "./globals.css";  // Import global styles
-import Head from "next/head"; // Import Head for managing document head
-import Script from "next/script"; // Add this import
+import Head from "next/head"; 
+import Script from "next/script"; 
 import { useState, useEffect } from "react";
 
 export default function RootLayout({ children }) {
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        {/* Preload Botpress scripts */}
+        {/* Preload Botpress scripts for faster load  */}
         <link rel="preload" href="https://cdn.botpress.cloud/webchat/v2.2/inject.js" as="script" />
         <link rel="preload" href="https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js" as="script" />
       </Head>
