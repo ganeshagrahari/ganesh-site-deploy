@@ -2,8 +2,8 @@
 
 import "./globals.css";  // Import global styles
 import Head from "next/head"; 
-import Script from "next/script"; 
 import { useState, useEffect } from "react";
+import ChatWidget from "./components/ChatWidget";
 
 export default function RootLayout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,22 +18,6 @@ export default function RootLayout({ children }) {
       setDarkMode(true);
       document.body.classList.add("dark-mode");
     }
-
-    // Inject Botpress Chatbot Script
-    const script1 = document.createElement("script");
-    script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
-    script1.async = true;
-    document.body.appendChild(script1);
-
-    const script2 = document.createElement("script");
-    script2.src = "https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js";
-    script2.async = true;
-    document.body.appendChild(script2);
-    //Cleanup function to remove scripts when component unmounts
-    return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
-    };
   }, []);
 
   // Function to toggle dark mode
@@ -60,21 +44,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        {/* Preload Botpress scripts for faster load  */}
-        <link rel="preload" href="https://cdn.botpress.cloud/webchat/v2.2/inject.js" as="script" />
-        <link rel="preload" href="https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js" as="script" />
       </Head>
       <body>
-        {/* Add Script components for optimal loading */}
-        <Script
-          src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="https://files.bpcontent.cloud/2025/04/03/11/20250403112531-FTCDWBE6.js"
-          strategy="afterInteractive"
-          onLoad={() => console.log('Chatbot script loaded')}
-        />
         
         <header>
           <nav>
@@ -92,6 +63,9 @@ export default function RootLayout({ children }) {
        
         {/*render child components */}
         {children}
+        
+        {/* Custom AI Chat Widget */}
+        <ChatWidget />
       </body>
     </html>
   );
